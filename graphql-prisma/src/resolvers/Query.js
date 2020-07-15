@@ -4,10 +4,15 @@ export const Query = {
   // ===========================================================
   // USERS
   users(parent, args, ctx, info) {
-    const { query } = args
+    const { query, first, skip, after, orderBy } = args
     const { prisma } = ctx
 
-    const operationArgs = {}
+    const operationArgs = {
+      first,
+      skip,
+      after,
+      orderBy
+    }
 
     if(query) {
       operationArgs.where = {
@@ -23,13 +28,17 @@ export const Query = {
   // ===========================================================
   // POSTS
   posts(parent, args, ctx, info) {
-    const { query } = args
+    const { query, first, skip, after, orderBy } = args
     const { prisma } = ctx
 
     const operationArgs = {
       where: {
         published: true
-      }
+      },
+      first,
+      skip,
+      after,
+      orderBy
     }
 
     if(query) {
@@ -47,10 +56,15 @@ export const Query = {
   // ===========================================================
   // COMMENTS
   comments(parent, args, ctx, info) {
-    const { query } = args
+    const { query, first, skip, after, orderBy } = args
     const { prisma } = ctx
 
-    const operationArgs = {}
+    const operationArgs = {
+      first,
+      skip,
+      after,
+      orderBy
+    }
 
     if(query) {
       operationArgs.where = {
@@ -111,7 +125,7 @@ export const Query = {
   // ===========================================================
   // MYPOSTS - LOGGED IN USER CAN GET THEIR POSTS
   myPosts(parent, args, ctx, info) {
-    const { query } = args
+    const { query, first, skip, after, orderBy } = args
     const { prisma, request } = ctx
     // Authentication Helper
     const userId = getUserId(request)
@@ -121,7 +135,11 @@ export const Query = {
         author: {
           id: userId
         }
-      }
+      },
+      first,
+      skip,
+      after,
+      orderBy
     }
 
     if(query) {
