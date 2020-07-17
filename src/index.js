@@ -1,8 +1,9 @@
 // GraphQL yoga server helper
-import { GraphQLServer, PubSub } from 'graphql-yoga'
-import { db } from './db'
-import { resolvers, fragmentReplacements } from './resolvers/index'
-import prisma from './prisma'
+require('@babel/polyfill')
+const { GraphQLServer, PubSub } = require('graphql-yoga')
+const { db } = require('./db')
+const { resolvers, fragmentReplacements } = require('./resolvers/index')
+const prisma = require('./prisma')
 
 // Publish/Subscription
 const pubsub = new PubSub()

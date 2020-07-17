@@ -1,1 +1,3 @@
-export const Post = {}
+const Post = {}
+
+module.exports = { Post }

@@ -1,5 +1,5 @@
-import { Prisma } from 'prisma-binding'
-import { fragmentReplacements } from './resolvers/index'
+const { Prisma } = require('prisma-binding')
+const { fragmentReplacements } = require('./resolvers/index')
 
 const prisma = new Prisma({
   typeDefs: 'src/generated/prisma.graphql',
@@ -8,4 +8,4 @@ const prisma = new Prisma({
   fragmentReplacements
 })
 
-export default prisma
+module.exports = prisma

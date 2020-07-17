@@ -1,6 +1,6 @@
-import getUserId from '../utils/getUserId'
+const getUserId = require('../utils/getUserId')
 
-export const Subscription = {
+const Subscription = {
   comment: {
     subscribe(parent, args, ctx, info) {
       const { prisma } = ctx
@@ -33,3 +33,5 @@ export const Subscription = {
     }
   }
 }
+
+module.exports = { Subscription }

@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs'
+const bcrypt = require('bcryptjs')
 
 const hashPassword = password => {
   if(password.length < 8) {
@@ -8,4 +8,4 @@ const hashPassword = password => {
   return bcrypt.hash(password, 10)
 }
 
-export default hashPassword
+module.exports = hashPassword

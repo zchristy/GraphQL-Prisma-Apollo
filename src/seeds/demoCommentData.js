@@ -1,4 +1,4 @@
-export const comments = [
+const comments = [
   {
     id: '1',
     text: 'What no way! Im going to go watch it now',
@@ -24,3 +24,5 @@ export const comments = [
     post: '3'
   }
 ]
+
+module.export = { comments }

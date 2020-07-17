@@ -1,1 +1,3 @@
-export const Comment = {}
+const Comment = {}
+
+module.exports = { Comment }

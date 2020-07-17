@@ -1,9 +1,9 @@
-import bcrypt from 'bcryptjs'
-import getUserId from '../utils/getUserId'
-import generateToken from '../utils/generateToken'
-import hashPassword from '../utils/hashPassword'
+const bcrypt = require('bcryptjs')
+const getUserId = require('../utils/getUserId')
+const generateToken = require('../utils/generateToken')
+const hashPassword = require('../utils/hashPassword')
 
-export const Mutation = {
+const Mutation = {
 // ===========================================================
 // USER - LOGIN
   async login(parent, args, ctx, info) {
@@ -263,3 +263,5 @@ export const Mutation = {
 
   },
 }
+
+module.exports = { Mutation }

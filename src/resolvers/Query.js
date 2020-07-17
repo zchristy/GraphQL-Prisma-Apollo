@@ -1,6 +1,6 @@
-import getUserId from '../utils/getUserId'
+const getUserId = require('../utils/getUserId')
 
-export const Query = {
+const Query = {
   // ===========================================================
   // USERS
   users(parent, args, ctx, info) {
@@ -154,3 +154,5 @@ export const Query = {
     return prisma.query.posts(operationArgs, info)
   }
 }
+
+module.exports = { Query }

@@ -1,12 +1,14 @@
 // Demo User Data
-import { users } from './seeds/demoUserData'
+const { users } = require('./seeds/demoUserData')
 // Demo Post Data
-import { posts } from './seeds/demoPostData'
+const { posts } = require('./seeds/demoPostData')
 // Demo Comment Data
-import { comments } from './seeds/demoCommentData'
+const { comments } = require('./seeds/demoCommentData')
 
-export const db = {
+const db = {
   users,
   posts,
   comments
 }
+
+module.export = { db }

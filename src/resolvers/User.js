@@ -1,6 +1,6 @@
-import getUserId from '../utils/getUserId'
+const getUserId = require('../utils/getUserId')
 
-export const User = {
+const User = {
   email: {
     fragment: 'fragment userId on User { id }',
     resolve(parent, args, ctx, info) {
@@ -34,3 +34,5 @@ export const User = {
     }
   }
 }
+
+module.exports = { User }

@@ -1,12 +1,12 @@
-import jwt from 'jsonwebtoken'
+const jwt = require('jsonwebtoken')
 
 const getUserId = (request, requireAuth = true) => {
-  // request.request is a http request, where request.connection is a subscription request from a websocket. 
+  // request.request is a http request, where request.connection is a subscription request from a websocket.
   const header = request.request ? request.request.headers.authorization : request.connection.context.Authorization
 
   if(header) {
     const token = header.replace('Bearer ', '')
-    const decoded = jwt.verify(token, 'thisisasecret')
+    const decoded = jwt.verify(token, process.env.JWT_SECRET)
     return decoded.userId
   }
 
@@ -17,4 +17,4 @@ const getUserId = (request, requireAuth = true) => {
   return null
 }
 
-export default getUserId
+module.exports = getUserId
